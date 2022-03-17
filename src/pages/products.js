@@ -1,77 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet/styles.css">
-    <title>The Pencil Store | Products</title>
-</head>
-<body>
-    <nav class="nav-bar">
-        <div class="nav-elements-left">
-            <button class="nav-btn-style"><span class="material-icons">menu</span></button>
-            <h4>The Pencil Store</h4>
-        </div>
-        <div class="nav-elements-right">
-            <div class="nav-search-container">
-                <button class="nav-btn-style"><span class="material-icons">search</span></button>
-                <input type="text" class="nav-search" placeholder="Type to search">
-            </div>
-            <button class="nav-btn-style"><span class="material-icons">account_circle</span></button>
-            <button class="nav-btn-style"><span class="material-icons">shopping_cart</span></button>
-            <button class="nav-btn-style"><span class="material-icons">star_rate</span></button>
-            <a class="nav-btn-style">Logout</a>
-        </div>
-    </nav>
+import pencil from ".//../graphics/pencils.jpg"
 
-    <article class="product-page">
+export default function Cart() {
+  return (
+      <main>
+     <article class="product-page">
 
         <section class="filters-panel">
             <h4>Filter By</h4>
             <div class="slider-container">
                 <h5>Price</h5>
-                <input type="range" min="100" max="2000" value="50" class="slider" id="price-range">
+                <input type="range" min="100" max="2000" value="50" class="slider" id="price-range"/>
             </div>
             <div class="checkbox-container">
                 <h5>Category</h5>
                 <div>
-                    <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1"> 
+                    <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1"/>
                     <label for="checkbox1">Everyday Pencils</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2"> 
+                    <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2"/>
                     <label for="checkbox2">Coloured Pencils</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3"> 
+                    <input type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3"/>
                     <label for="checkbox3">Drawing Pencils</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="checkbox4" name="checkbox4" value="checkbox4"> 
+                    <input type="checkbox" id="checkbox4" name="checkbox4" value="checkbox4"/>
                     <label for="checkbox4">Shading Pencils</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="checkbox5" name="checkbox5" value="checkbox5"> 
+                    <input type="checkbox" id="checkbox5" name="checkbox5" value="checkbox5"/>
                     <label for="checkbox5">Sketch Pencils</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="checkbox6" name="checkbox6" value="checkbox6"> 
+                    <input type="checkbox" id="checkbox6" name="checkbox6" value="checkbox6"/>
                     <label for="checkbox6">Creators' Pencils</label>
                 </div>
             </div>
             <div class="radio-btn-container">
                 <h5>Rating</h5>
-                <input type="radio" id="5-stars" name="rating" value="5-stars">
-                <label for="5-stars">5 Stars</label><br>
-                <input type="radio" id="4-stars" name="rating" value="4-stars">
-                <label for="4-stars">4 Stars and above</label><br>
-                <input type="radio" id="3-stars" name="rating" value="3-stars">
-                <label for="3-stars">3 Stars and above</label><br>
-                <input type="radio" id="2-stars" name="rating" value="2-stars">
-                <label for="2-stars">2 Stars and above</label><br>
-                <input type="radio" id="1-star" name="rating" value="1-star">
-                <label for="1-star">1 Star and above</label><br>
+                <input type="radio" id="5-stars" name="rating" value="5-stars"/>
+                <label for="5-stars">5 Stars</label><br/>
+                <input type="radio" id="4-stars" name="rating" value="4-stars"/>
+                <label for="4-stars">4 Stars and above</label><br/>
+                <input type="radio" id="3-stars" name="rating" value="3-stars"/>
+                <label for="3-stars">3 Stars and above</label><br/>
+                <input type="radio" id="2-stars" name="rating" value="2-stars"/>
+                <label for="2-stars">2 Stars and above</label><br/>
+                <input type="radio" id="1-star" name="rating" value="1-star"/>
+                <label for="1-star">1 Star and above</label><br/>
             </div>
         </section>
 
@@ -82,7 +60,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencil"/>
                             <div>
                                 <h4>Everyday Pencils</h4>
                                 <small>by Faber-Castell</small>
@@ -105,7 +83,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencil"/>
                             <div>
                                 <h4>Coloured Pencils</h4>
                                 <small>by Faber-Castell</small>
@@ -127,7 +105,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencil"/>
                             <div>
                                 <h4>Drawing Pencils</h4>
                                 <small>by Faber-Castell</small>
@@ -149,7 +127,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencil"/>
                             <div>
                                 <h4>Shading Pencils</h4>
                                 <small>by Faber-Castell</small>
@@ -171,7 +149,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencil"/>
                             <div>
                                 <h4>Sketch Pencils</h4>
                                 <small>by Faber-Castell</small>
@@ -193,7 +171,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencil"/>
                             <div>
                                 <h4>Creators' Pencil Set</h4>
                                 <small>by Faber-Castell</small>
@@ -214,6 +192,6 @@
         </section>
 
     </article>
-
-</body>
-</html>
+   </main>
+  );
+}

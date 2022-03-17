@@ -1,36 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet/styles.css">
-    <title>The Pencil Store | Cart</title>
-</head>
-<body>
-    <nav class="nav-bar">
-        <div class="nav-elements-left">
-            <button class="nav-btn-style"><span class="material-icons">menu</span></button>
-            <h4>The Pencil Store</h4>
-        </div>
-        <div class="nav-elements-right">
-            <div class="nav-search-container">
-                <button class="nav-btn-style"><span class="material-icons">search</span></button>
-                <input type="text" class="nav-search" placeholder="Type to search">
-            </div>
-            <button class="nav-btn-style"><span class="material-icons">account_circle</span></button>
-            <button class="nav-btn-style"><span class="material-icons">shopping_cart</span></button>
-            <button class="nav-btn-style"><span class="material-icons">star_rate</span></button>
-            <a class="nav-btn-style">Logout</a>
-        </div>
-    </nav>
+import pencil from ".//../graphics/pencils.jpg"
 
-
-    <article class="cart-page">
+export default function Cart() {
+  return (
+   <article class="cart-page">
 
         <section class="checkout-panel">
             <h4 class="checkout-title">Final Price Details</h4>
-            <hr>
             <p class="checkout-labels">Price: </p>
             <p class="checkout-values">₹3046</p>
             <p class="checkout-labels">Discounts:</p>
@@ -38,7 +13,7 @@
             <p class="checkout-labels checkout-final-amount">Total Amount: </p>
             <p class="checkout-values">₹2846</p>
             <p class="checkout-note">You will save ₹200 for this order!</p>
-            <button class="primary-btn">Checkout & place order</button>
+            <button class="primary-btn">Checkout and place order</button>
         </section>
 
         <h4 class="page-title">Items inside your Cart (4)</h4>
@@ -49,7 +24,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencils"/>
                             <div>
                                 <h4>Drawing Pencils</h4>
                                 <small>by Faber-Castell</small>
@@ -59,7 +34,7 @@
                         <p class="price-tag">Price: ₹699/-</p>
                         <div class="quantity-container">
                             <button class="secondary-btn">-</button>
-                            <input type="text" value="1">
+                            <input type="text" value="1"/>
                             <button class="secondary-btn">+</button>
                         </div>
                     </div>
@@ -76,7 +51,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencils"/>
                             <div>
                                 <h4>Shading Pencils</h4>
                                 <small>by Faber-Castell</small>
@@ -86,7 +61,7 @@
                         <p class="price-tag">Price: ₹599/-</p>
                         <div class="quantity-container">
                             <button class="secondary-btn">-</button>
-                            <input type="text" value="1">
+                            <input type="text" value="1"/>
                             <button class="secondary-btn">+</button>
                         </div>
                     </div>
@@ -103,7 +78,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencils"/>
                             <div>
                                 <h4>Sketch Pencils</h4>
                                 <small>by Faber-Castell</small>
@@ -113,7 +88,7 @@
                         <p class="price-tag">Price: ₹649/-</p>
                         <div class="quantity-container">
                             <button class="secondary-btn">-</button>
-                            <input type="text" value="1">
+                            <input type="text" value="1"/>
                             <button class="secondary-btn">+</button>
                         </div>
                     </div>
@@ -130,7 +105,7 @@
                 <div class="badge-container">
                     <div class="card-header">
                         <div>
-                            <img src="graphics/penicls.jpg">
+                            <img src={pencil} alt="pencils"/>
                             <div>
                                 <h4>Creators' Pencil Set</h4>
                                 <small>by Faber-Castell</small>
@@ -140,7 +115,7 @@
                         <p class="price-tag">Price: ₹1099/-</p>
                         <div class="quantity-container">
                             <button class="secondary-btn">-</button>
-                            <input type="text" value="1">
+                            <input type="text" value="1"/>
                             <button class="secondary-btn">+</button>
                         </div>
                     </div>
@@ -156,5 +131,5 @@
         </section>
 
     </article>
-</body>
-</html>
+  );
+}
