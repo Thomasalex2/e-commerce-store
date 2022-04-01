@@ -1,7 +1,7 @@
 import pencil from ".//../graphics/pencils.jpg"
 import { Link } from "react-router-dom";
 
-export default function Sign_Up() {
+export default function SignUp() {
   return (
     <main>
     <div class="form-container">

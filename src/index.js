@@ -9,7 +9,8 @@ import Cart from "./pages/cart";
 import Wishlist from "./pages/wishlist";
 import Products from "./pages/products";
 import Login from "./pages/login"
-import Sign_Up from "./pages/sign_up"
+import SignUp from "./pages/sign_up"
+import ErrorPage from "./pages/error_page";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,7 +22,8 @@ ReactDOM.render(
         <Route path="cart" element={<Cart />} />
         <Route path="wishlist" element={<Wishlist />} />
         <Route path="login" element={<Login />} />
-        <Route path="sign_up" element={<Sign_Up />} />
+        <Route path="sign_up" element={<SignUp />} />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
       </Routes>
     </BrowserRouter>

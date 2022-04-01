@@ -18,6 +18,7 @@ function App() {
             <Link to="/cart" class="nav-btn-style"><span class="material-icons">shopping_cart</span></Link>
             <Link to="/wishlist" class="nav-btn-style"><span class="material-icons">star_rate</span></Link>
             <Link to="/login" class="nav-btn-style">Login</Link>
+            
         </div>
     </nav>
       <Outlet />
