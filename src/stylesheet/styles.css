@@ -14,6 +14,7 @@
     --black-bg-color: rgb(34, 33, 33);
     --grey-bg-color: rgb(173, 44, 44);
     --lightgrey-color: lightgrey;
+    --active-link: #cbd5e1;
 }
 
 body {
@@ -35,4 +36,8 @@ img {
     text-align: center;
     padding: 1rem;
     margin: 1rem;
+}
+
+.active-lnk {
+    color: red
 }

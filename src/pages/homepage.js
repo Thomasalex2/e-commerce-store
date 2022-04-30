@@ -1,6 +1,8 @@
+import { NavLink } from "react-router-dom"
 import pencil from ".//../graphics/pencils.jpg"
+import { ActiveLinkStyle } from ".//../helpers/helpers"
 
-export default function Cart() {
+export default function Homepage() {
   return (
       <main>
     <div class="banner-images">
@@ -17,7 +19,7 @@ export default function Cart() {
         <div class="text-over-media-center">
             <h4>The one stop shop for all your Pencil needs</h4>
             <div class="btn-container">
-                <button class="primary-btn">Shop Now</button>
+                <NavLink style={ActiveLinkStyle} to="/products"><button class="primary-btn">Shop Now</button></NavLink>
                 <button class="secondary-btn">Blogs</button>
             </div>
         </div>

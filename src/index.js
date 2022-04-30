@@ -17,13 +17,13 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-        <Route path="homepage" element={<Homepage />} />
-        <Route path="products" element={<Products />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="wishlist" element={<Wishlist />} />
-        <Route path="login" element={<Login />} />
-        <Route path="sign_up" element={<SignUp />} />
-        <Route path="*" element={<ErrorPage />} />
+          <Route path="homepage" element={<Homepage />} />
+          <Route path="products" element={<Products />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="wishlist" element={<Wishlist />} />
+          <Route path="login" element={<Login />} />
+          <Route path="sign_up" element={<SignUp />} />
+          <Route path="*" element={<ErrorPage />} />
       </Route>
       </Routes>
     </BrowserRouter>
