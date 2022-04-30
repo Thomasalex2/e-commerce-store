@@ -41,3 +41,7 @@ img {
 .active-lnk {
     color: red
 }
+
+.slider-container {
+    display:block;
+}
