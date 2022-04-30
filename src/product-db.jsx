@@ -107,4 +107,17 @@ export const product_db = [
         isFeatured: true,
         category: "Creators' Pencils",
     },
+    {
+        id: uuid(),
+        name: "Pencil - set of 4",
+        image: "",
+        price: "99",
+        brand: "Faber-Castell",
+        description: "Regular pencil for everyday use",
+        rating: "3.2",
+        inStock: true,
+        fastDelivery: true,
+        isFeatured: false,
+        category: "Everyday Pencils",
+    },
 ]

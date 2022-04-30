@@ -12,6 +12,8 @@ const FilterByPrice = (product, price) => {
     console.log(product.price, price)
     return product.price <= price;
 }
+const FilterByStock = (product, category) => product.inStock === true;
+const FilterByDelivery = (product, category) => product.fastDelivery === true;
 
 export const SortReducer = (state, action) => {
     let newState = [...state];
@@ -26,6 +28,11 @@ export const SortReducer = (state, action) => {
             return product_db.filter(product => FilterByRating(product, action.payload));
         case "FILTER_BY_PRICE":
             return product_db.filter(product => FilterByPrice(product, action.payload));
+        case "FILTER_BY_STOCK":
+            console.log(action.payload)
+            return action.payload === true ? newState.filter(product => FilterByStock(product, action.payload)) : product_db;
+        case "FILTER_BY_DELIVERY":
+            return action.payload === true ? newState.filter(product => FilterByDelivery(product, action.payload)) : product_db;
         default:
             return newState;
     }
