@@ -1,4 +1,3 @@
-import pencil from ".//../graphics/pencils.jpg"
 import { useState, useReducer } from "react"
 import { product_db, product_categories } from "../product-db"
 import { ProductCardLayout } from "../Components/product-card-layout"
@@ -67,7 +66,7 @@ export default function Products() {
                                 return (
                                     <div key={rating}>
                                         <input type="radio" value={rating} name="filterRating" onChange={() => dispatch({ type: "FILTER_BY_RATING", payload: rating })} />
-                                        <label htmlFor={rating}>{rating + " " + "⭐".repeat(rating)}</label>
+                                        <label htmlFor={rating}>{"⭐".repeat(rating)}</label>
                                     </div>
                                 )
                             })}

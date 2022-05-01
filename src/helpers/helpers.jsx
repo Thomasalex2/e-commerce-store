@@ -26,10 +26,9 @@ export const SortReducer = (state, action) => {
         case "FILTER_BY_PRICE":
             return product_db.filter(product => FilterByPrice(product, action.payload));
         case "FILTER_BY_STOCK":
-            console.log(action.payload)
-            return action.payload === true ? newState.filter(product => FilterByStock(product, action.payload)) : product_db;
+            return action.payload === true ? newState.filter(product => FilterByStock(product)) : product_db;
         case "FILTER_BY_DELIVERY":
-            return action.payload === true ? newState.filter(product => FilterByDelivery(product, action.payload)) : product_db;
+            return action.payload === true ? newState.filter(product => FilterByDelivery(product)) : product_db;
         default:
             return newState;
     }
