@@ -1,77 +1,24 @@
-import pencil from ".//../graphics/pencils.jpg"
+import { useWishlist } from "../contexts/wishlist-context";
+import { WishlistCardLayout } from "../Components/wishlist-cart-layout";
+import { product_db } from "../product-db";
 
 export default function Wishlist() {
-  return (
-    <main>
-      <h4 className="heading-center">My Wishlist</h4>
-          
-          <section className="products-panel">
-              <div className="card-layout layout-vertical">
-                  <div className="badge-container">
-                      <div className="card-header">
-                          <div>
-                              <img src={pencil} alt="pencils"/>
-                              <div>
-                                  <h4>Everyday Pencils</h4>
-                                  <small>by Faber-Castell</small>
-                              </div>
-                          </div>
-                          <p> Description of the special features of the pencil</p>
-                          <p className="price-tag">Price: ₹299/-</p>
-                      </div>
-                      <div className= "card-clickables">
-                          <div className="btn-container">
-                              <button className="primary-btn">Move to Cart</button>
-                              <button className="secondary-btn">Remove</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+    const { wishlist } = useWishlist();
 
-              <div className="card-layout layout-vertical">
-                  <div className="badge-container">
-                      <div className="card-header">
-                          <div>
-                              <img src={pencil} alt="pencils"/>
-                              <div>
-                                  <h4>Coloured Pencils</h4>
-                                  <small>by Faber-Castell</small>
-                              </div>
-                          </div>
-                          <p> Description of the special features of the pencil</p>
-                          <p className="price-tag">Price: ₹499/-</p>
-                      </div>
-                      <div className= "card-clickables">
-                          <div className="btn-container">
-                              <button className="primary-btn">Move to Cart</button>
-                              <button className="secondary-btn">Remove</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+    const productsInWishlist = [];
+    product_db.forEach(product => {
+        if (wishlist.includes(product.name)) {
+            productsInWishlist.push(product);
+        }
+    });
 
-              <div className="card-layout layout-vertical">
-                  <div className="badge-container">
-                      <div className="card-header">
-                          <div>
-                              <img src={pencil} alt="pencils"/>
-                              <div>
-                                  <h4>Drawing Pencils</h4>
-                                  <small>by Faber-Castell</small>
-                              </div>
-                          </div>
-                          <p> Description of the special features of the pencil</p>
-                          <p className="price-tag">Price: ₹699/-</p>
-                      </div>
-                      <div className= "card-clickables">
-                          <div className="btn-container">
-                              <button className="primary-btn">Move to Cart</button>
-                              <button className="secondary-btn">Remove</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+    return (
+        <main>
+            <h4 className="heading-center">My Wishlist</h4>
+            {productsInWishlist.length === 0 ? <h5 className="heading-center">No Items in your Wishlist!</h5> : null}
+            <section className="products-panel">
+                {productsInWishlist.map(product => WishlistCardLayout(product))}
             </section>
-  </main>
-  );
+        </main>
+    );
 }

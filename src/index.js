@@ -11,9 +11,11 @@ import Products from "./pages/products";
 import Login from "./pages/login"
 import SignUp from "./pages/sign_up"
 import ErrorPage from "./pages/error_page";
+import { WishlistProvider } from "./contexts/wishlist-context";
 
 ReactDOM.render(
   <React.StrictMode>
+    <WishlistProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
@@ -26,7 +28,8 @@ ReactDOM.render(
           <Route path="*" element={<ErrorPage />} />
       </Route>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </WishlistProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
