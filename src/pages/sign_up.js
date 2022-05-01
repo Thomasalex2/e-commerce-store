@@ -1,21 +1,21 @@
 export default function SignUp() {
   return (
     <main>
-    <div class="form-container">
+    <div className="form-container">
         <form>
             <h4>Please fill in details below to sign up</h4>
-            <label for="fname">First name <span class="required">*</span></label>
+            <label htmlFor="fname">First name <span className="required">*</span></label>
             <input type="text" id="fname" name="fname"/>
-            <label for="lname">Last name <span class="required">*</span></label>
+            <label htmlFor="lname">Last name <span className="required">*</span></label>
             <input type="text" id="lname" name="lname"/>
-            <label for="dob">Date of Birth</label>
+            <label htmlFor="dob">Date of Birth</label>
             <input type="date" id="dob" name="dob"/>
-            <label for="email">Email ID <span class="required">*</span></label>
+            <label htmlFor="email">Email ID <span className="required">*</span></label>
             <input type="text" id="email" name="email" placeholder="name@example.com"/>
-            <label for="pwd">Password</label>
+            <label htmlFor="pwd">Password</label>
             <input type="password" id="password" name="password"/>
-            <div class="form-btn-container">
-                <button class="primary-btn">Create an Account</button>
+            <div className="form-btn-container">
+                <button className="primary-btn">Create an Account</button>
             </div>
         </form>
     </div>

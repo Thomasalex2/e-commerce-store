@@ -3,12 +3,12 @@ import pencil from ".//../graphics/pencils.jpg"
 export default function Wishlist() {
   return (
     <main>
-      <h4 class="heading-center">My Wishlist</h4>
+      <h4 className="heading-center">My Wishlist</h4>
           
-          <section class="products-panel">
-              <div class="card-layout layout-vertical">
-                  <div class="badge-container">
-                      <div class="card-header">
+          <section className="products-panel">
+              <div className="card-layout layout-vertical">
+                  <div className="badge-container">
+                      <div className="card-header">
                           <div>
                               <img src={pencil} alt="pencils"/>
                               <div>
@@ -17,20 +17,20 @@ export default function Wishlist() {
                               </div>
                           </div>
                           <p> Description of the special features of the pencil</p>
-                          <p class="price-tag">Price: ₹299/-</p>
+                          <p className="price-tag">Price: ₹299/-</p>
                       </div>
-                      <div class= "card-clickables">
-                          <div class="btn-container">
-                              <button class="primary-btn">Move to Cart</button>
-                              <button class="secondary-btn">Remove</button>
+                      <div className= "card-clickables">
+                          <div className="btn-container">
+                              <button className="primary-btn">Move to Cart</button>
+                              <button className="secondary-btn">Remove</button>
                           </div>
                       </div>
                   </div>
               </div>
 
-              <div class="card-layout layout-vertical">
-                  <div class="badge-container">
-                      <div class="card-header">
+              <div className="card-layout layout-vertical">
+                  <div className="badge-container">
+                      <div className="card-header">
                           <div>
                               <img src={pencil} alt="pencils"/>
                               <div>
@@ -39,20 +39,20 @@ export default function Wishlist() {
                               </div>
                           </div>
                           <p> Description of the special features of the pencil</p>
-                          <p class="price-tag">Price: ₹499/-</p>
+                          <p className="price-tag">Price: ₹499/-</p>
                       </div>
-                      <div class= "card-clickables">
-                          <div class="btn-container">
-                              <button class="primary-btn">Move to Cart</button>
-                              <button class="secondary-btn">Remove</button>
+                      <div className= "card-clickables">
+                          <div className="btn-container">
+                              <button className="primary-btn">Move to Cart</button>
+                              <button className="secondary-btn">Remove</button>
                           </div>
                       </div>
                   </div>
               </div>
 
-              <div class="card-layout layout-vertical">
-                  <div class="badge-container">
-                      <div class="card-header">
+              <div className="card-layout layout-vertical">
+                  <div className="badge-container">
+                      <div className="card-header">
                           <div>
                               <img src={pencil} alt="pencils"/>
                               <div>
@@ -61,12 +61,12 @@ export default function Wishlist() {
                               </div>
                           </div>
                           <p> Description of the special features of the pencil</p>
-                          <p class="price-tag">Price: ₹699/-</p>
+                          <p className="price-tag">Price: ₹699/-</p>
                       </div>
-                      <div class= "card-clickables">
-                          <div class="btn-container">
-                              <button class="primary-btn">Move to Cart</button>
-                              <button class="secondary-btn">Remove</button>
+                      <div className= "card-clickables">
+                          <div className="btn-container">
+                              <button className="primary-btn">Move to Cart</button>
+                              <button className="secondary-btn">Remove</button>
                           </div>
                       </div>
                   </div>
