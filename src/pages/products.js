@@ -19,9 +19,16 @@ export default function Products() {
                         <div>
                             <br />
                             <h5>Price</h5>
-                            <input type="radio" value="low" name="sortPrice" onClick={() => dispatch({ type: "SORT_BY_PRICE", payload: "low" })} />Low to High
+                            <input type="radio" value="low" name="sort" onClick={() => dispatch({ type: "SORT_BY_PRICE", payload: "low" })} />Low to High
                             <br />
-                            <input type="radio" value="high" name="sortPrice" onClick={() => dispatch({ type: "SORT_BY_PRICE", payload: "high" })} />High to Low
+                            <input type="radio" value="high" name="sort" onClick={() => dispatch({ type: "SORT_BY_PRICE", payload: "high" })} />High to Low
+                        </div>
+                        <div>
+                            <br />
+                            <h5>Rating</h5>
+                            <input type="radio" value="low" name="sort" onClick={() => dispatch({ type: "SORT_BY_RATING", payload: "low" })} />Low to High
+                            <br />
+                            <input type="radio" value="high" name="sort" onClick={() => dispatch({ type: "SORT_BY_RATING", payload: "high" })} />High to Low
                         </div>
                         <br />
                         <h4>Filter By</h4>
