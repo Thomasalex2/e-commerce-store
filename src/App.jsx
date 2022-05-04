@@ -2,13 +2,37 @@ import { useEffect } from "react"
 import { Outlet, NavLink } from "react-router-dom";
 import { ActiveLinkStyle } from "./helpers/helpers"
 import { useWishlist } from "./contexts/wishlist-context";
+import { useCart } from "./contexts/cart-context";
 
 function App() {
 
-  const { wishlistCount, setWishlist, setWishlistCount } = useWishlist();
+  const { wishlistCount, setWishlist } = useWishlist();
+  const { cartCount, setCart } = useCart();
+  
   useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem("wishlistItems")))
-    setWishlist(JSON.parse(localStorage.getItem("wishlistItems")))
+    try {
+      console.log(JSON.parse("Wishlist Items: ", localStorage.getItem("wishlistItems")))
+      if (JSON.parse(localStorage.getItem("cartItems")) === null) {
+        throw Error;
+      }
+      setWishlist(JSON.parse(localStorage.getItem("wishlistItems")))
+    } catch (error) {
+      console.log("No Wishlist Items")
+      setWishlist(() => []);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      console.log("Cart Items: ", JSON.parse(localStorage.getItem("cartItems")))
+      if (JSON.parse(localStorage.getItem("cartItems")) === null) {
+        throw Error;
+      }
+      setCart(JSON.parse(localStorage.getItem("cartItems")))
+    } catch (error) {
+      console.log("No Cart Items")
+      setCart(() => []);
+    }
   }, []);
 
   return (
@@ -31,7 +55,12 @@ function App() {
               {wishlistCount > 0 ? <span className="badge bdg-small bdg-orange">{wishlistCount}</span> : null}
             </div>
           </NavLink>
-          <NavLink style={ActiveLinkStyle} to="/cart" className="nav-btn-style"><span className="material-icons">shopping_cart</span></NavLink>
+          <NavLink style={ActiveLinkStyle} to="/cart" className="nav-btn-style">
+            <div className="badge-container">
+              <span className="material-icons">shopping_cart</span>
+              {cartCount > 0 ? <span className="badge bdg-small bdg-orange">{cartCount}</span> : null}
+            </div>
+          </NavLink>
           <NavLink style={ActiveLinkStyle} to="/login" className="nav-btn-style">Login</NavLink>
         </div>
       </nav>

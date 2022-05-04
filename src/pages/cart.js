@@ -1,135 +1,79 @@
-import pencil from ".//../graphics/pencils.jpg"
+import { useCart } from "../contexts/cart-context";
+import { CartCardLayout } from "../Components/cart-card-layout";
+import { product_db } from "../product-db";
 
 export default function Cart() {
-  return (
-   <article className="cart-page">
+    
+    const { cart } = useCart();
+    const productsInCart = [];
+    product_db.forEach(product => {
+        if (cart.includes(product.name)) {
+            productsInCart.push(product);
+        }
+    });
 
-        <section className="checkout-panel">
-            <h4 className="checkout-title">Final Price Details</h4>
-            <p className="checkout-labels">Price: </p>
-            <p className="checkout-values">₹3046</p>
-            <p className="checkout-labels">Discounts:</p>
-            <p className="checkout-values">₹200</p>
-            <p className="checkout-labels checkout-final-amount">Total Amount: </p>
-            <p className="checkout-values">₹2846</p>
-            <p className="checkout-note">You will save ₹200 for this order!</p>
-            <button className="primary-btn">Checkout and place order</button>
-        </section>
+    const showEmptyCartPage = () => {
+        return (
+            <>
+                <h4 className="heading-center"> My Cart</h4>
+                <h5 className="heading-center">No Items in your Cart!</h5>
+            </>
+        )
+    }
 
-        <h4 className="page-title">Items inside your Cart (4)</h4>
-        
-        <section className="products-panel">
+    const getTotalItemPrice = () => {
+        let totalItemPrice = 0;
+        productsInCart.forEach(product => {
+            totalItemPrice += parseInt(product.price);
+        });
+        return totalItemPrice;
+    }
 
-            <div className="card-layout layout-vertical">
-                <div className="badge-container">
-                    <div className="card-header">
-                        <div>
-                            <img src={pencil} alt="pencils"/>
-                            <div>
-                                <h4>Drawing Pencils</h4>
-                                <small>by Faber-Castell</small>
-                            </div>
-                        </div>
-                        <p> Description of the special features of the pencil</p>
-                        <p className="price-tag">Price: ₹699/-</p>
-                        <div className="quantity-container">
-                            <button className="secondary-btn">-</button>
-                            <input type="text" value="1"/>
-                            <button className="secondary-btn">+</button>
-                        </div>
-                    </div>
-                    <div className= "card-clickables">
-                        <div className="btn-container">
-                            <button className="primary-btn">Remove from Cart</button>
-                            <button className="secondary-btn">Move to Wishlist</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    const showCartDetails = () => {
 
-            <div className="card-layout layout-vertical">
-                <div className="badge-container">
-                    <div className="card-header">
-                        <div>
-                            <img src={pencil} alt="pencils"/>
-                            <div>
-                                <h4>Shading Pencils</h4>
-                                <small>by Faber-Castell</small>
-                            </div>
-                        </div>
-                        <p> Description of the special features of the pencil</p>
-                        <p className="price-tag">Price: ₹599/-</p>
-                        <div className="quantity-container">
-                            <button className="secondary-btn">-</button>
-                            <input type="text" value="1"/>
-                            <button className="secondary-btn">+</button>
-                        </div>
-                    </div>
-                    <div className= "card-clickables">
-                        <div className="btn-container">
-                            <button className="primary-btn">Remove from Cart</button>
-                            <button className="secondary-btn">Move to Wishlist</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        const totalItemPrice = () => {
+            let totalItemPrice = 0;
+            productsInCart.forEach(product => {
+                totalItemPrice += parseInt(product.price);
+            });
+            return totalItemPrice;
+        }
 
-            <div className="card-layout layout-vertical">
-                <div className="badge-container">
-                    <div className="card-header">
-                        <div>
-                            <img src={pencil} alt="pencils"/>
-                            <div>
-                                <h4>Sketch Pencils</h4>
-                                <small>by Faber-Castell</small>
-                            </div>
-                        </div>
-                        <p> Description of the special features of the pencil</p>
-                        <p className="price-tag">Price: ₹649/-</p>
-                        <div className="quantity-container">
-                            <button className="secondary-btn">-</button>
-                            <input type="text" value="1"/>
-                            <button className="secondary-btn">+</button>
-                        </div>
-                    </div>
-                    <div className= "card-clickables">
-                        <div className="btn-container">
-                            <button className="primary-btn">Remove from Cart</button>
-                            <button className="secondary-btn">Move to Wishlist</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        const shippingRate = () => totalItemPrice() > 500 ? 0 : 40;
+        const getTaxes = () => (totalItemPrice() * 0.18).toFixed(2);
+        const getDiscounts = () => 200
+        const getTotalPrice = () => (parseFloat(totalItemPrice()) + parseFloat(shippingRate()) + parseFloat(getTaxes()) - parseFloat(getDiscounts())).toFixed(2);
 
-            <div className="card-layout layout-vertical">
-                <div className="badge-container">
-                    <div className="card-header">
-                        <div>
-                            <img src={pencil} alt="pencils"/>
-                            <div>
-                                <h4>Creators' Pencil Set</h4>
-                                <small>by Faber-Castell</small>
-                            </div>
-                        </div>
-                        <p> Description of the special features of the pencil</p>
-                        <p className="price-tag">Price: ₹1099/-</p>
-                        <div className="quantity-container">
-                            <button className="secondary-btn">-</button>
-                            <input type="text" value="1"/>
-                            <button className="secondary-btn">+</button>
-                        </div>
-                    </div>
-                    <div className= "card-clickables">
-                        <div className="btn-container">
-                            <button className="primary-btn">Remove from Cart</button>
-                            <button className="secondary-btn">Move to Wishlist</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        return (
+            <>
+                <article className="cart-page">
+                    <h4 className="page-title">Items inside your Cart ({productsInCart.length})</h4>
+                    <section className="checkout-panel">
+                        <h4 className="checkout-title">Final Price Details</h4>
+                        <p className="checkout-labels">Price: </p>
+                        <p className="checkout-values">₹{totalItemPrice()}</p>
+                        <p className="checkout-labels">Shipping:</p>
+                        <p className="checkout-values">₹{shippingRate()}</p>
+                        <p className="checkout-labels">Taxes:</p>
+                        <p className="checkout-values">₹{getTaxes()}</p>
+                        <p className="checkout-labels">Discounts:</p>
+                        <p className="checkout-values">₹{getDiscounts()}</p>
+                        <p className="checkout-labels checkout-final-amount">Total Amount: </p>
+                        <p className="checkout-values">₹{getTotalPrice()}</p>
+                        <p className="checkout-note">You will save ₹{getDiscounts()} for this order!</p>
+                        <button className="primary-btn">Checkout and place order</button>
+                    </section>
+                    <section className="products-panel">
+                        {productsInCart.map(product => CartCardLayout(product))}
+                    </section>
+                </article>
+            </>
+        )
+    }
 
-        </section>
-
-    </article>
-  );
+    return (
+        <div>
+            {productsInCart.length === 0 ? showEmptyCartPage() : showCartDetails()}
+        </div>
+    );
 }

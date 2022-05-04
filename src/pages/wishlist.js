@@ -1,5 +1,5 @@
 import { useWishlist } from "../contexts/wishlist-context";
-import { WishlistCardLayout } from "../Components/wishlist-cart-layout";
+import { WishlistCardLayout } from "../Components/wishlist-card-layout";
 import { product_db } from "../product-db";
 
 export default function Wishlist() {

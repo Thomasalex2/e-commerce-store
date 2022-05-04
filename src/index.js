@@ -12,24 +12,27 @@ import Login from "./pages/login"
 import SignUp from "./pages/sign_up"
 import ErrorPage from "./pages/error_page";
 import { WishlistProvider } from "./contexts/wishlist-context";
+import { CartProvider } from './contexts/cart-context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <WishlistProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="homepage" element={<Homepage />} />
-          <Route path="products" element={<Products />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="wishlist" element={<Wishlist />} />
-          <Route path="login" element={<Login />} />
-          <Route path="sign_up" element={<SignUp />} />
-          <Route path="*" element={<ErrorPage />} />
-      </Route>
-      </Routes>
-      </BrowserRouter>
-    </WishlistProvider>
+    <CartProvider>
+      <WishlistProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />}>
+              <Route path="homepage" element={<Homepage />} />
+              <Route path="products" element={<Products />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="wishlist" element={<Wishlist />} />
+              <Route path="login" element={<Login />} />
+              <Route path="sign_up" element={<SignUp />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </WishlistProvider>
+    </CartProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
