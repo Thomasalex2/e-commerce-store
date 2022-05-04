@@ -1,7 +1,11 @@
 
 import pencil from ".//../graphics/pencils.jpg"
+import { useWishlist } from "../contexts/wishlist-context"
+
 
 export const WishlistCardLayout = ({ id, name, brand, description, price, rating, inStock, fastDelivery }) => {
+    
+    const { removeItemFromWishlist } = useWishlist();
     
     return (
         <div key={id} className="card-layout layout-vertical">
@@ -25,7 +29,7 @@ export const WishlistCardLayout = ({ id, name, brand, description, price, rating
                 <div className="card-clickables">
                     <div className="btn-container">
                         <button className="primary-btn">Move to Cart</button>
-                        <button className="secondary-btn">Remove</button>
+                        <button className="secondary-btn" onClick={() => removeItemFromWishlist(name) }>Remove</button>
                     </div>
                 </div>
             </div>

@@ -12,8 +12,17 @@ const WishlistProvider = ({ children }) => {
         setWishlistCount(wishlist.length);
     }
 
+    const removeItemFromWishlist = (item) => {
+        const newWishlist = [...wishlist];
+        const index = newWishlist.indexOf(item);
+        if (index > -1) {
+            newWishlist.splice(index, 1);
+        }
+        setWishlist(newWishlist);
+    }
+
     return (
-        <WishlistContext.Provider value={{ wishlist, wishlistCount, setWishlist, setWishlistCount}}>
+        <WishlistContext.Provider value={{ wishlist, wishlistCount, setWishlist, setWishlistCount, removeItemFromWishlist }}>
             {children}
         </WishlistContext.Provider>
     )
