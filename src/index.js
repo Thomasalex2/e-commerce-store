@@ -13,6 +13,7 @@ import SignUp from "./pages/sign_up"
 import ErrorPage from "./pages/error_page";
 import { WishlistProvider } from "./contexts/wishlist-context";
 import { CartProvider } from './contexts/cart-context';
+import { ProductDetail } from "./Components/product-detail-page"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.render(
             <Route path="/" element={<App />}>
               <Route path="homepage" element={<Homepage />} />
               <Route path="products" element={<Products />} />
+              <Route path="/products/:productName" element={<ProductDetail />} />
               <Route path="cart" element={<Cart />} />
               <Route path="wishlist" element={<Wishlist />} />
               <Route path="login" element={<Login />} />

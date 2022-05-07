@@ -1,10 +1,10 @@
 
-import pencil from ".//../graphics/pencils.jpg"
+// import pencil from ".//../graphics/pencils.jpg"
 import { useWishlist } from "../contexts/wishlist-context"
 import { useCart } from "../contexts/cart-context"
 
 
-export const CartCardLayout = ({ id, name, brand, description, price, rating, inStock, fastDelivery }) => {
+export const CartCardLayout = ({ id, name, image, brand, description, price, rating, inStock, fastDelivery }) => {
     
     const { removeItemFromCart } = useCart();
     const { wishlist, setWishlist } = useWishlist();
@@ -19,7 +19,7 @@ export const CartCardLayout = ({ id, name, brand, description, price, rating, in
             <div className="badge-container">
                 <div className="card-header">
                     <div>
-                        <img src={pencil} alt="pencils" />
+                        <img src={image} alt="product-image" />
                         <div>
                             <h4>{name}</h4>
                             <small>by {brand}</small>
