@@ -1,12 +1,27 @@
-import { useState, useReducer } from "react"
+import { useState, useReducer, useEffect } from "react"
+import { useParams } from "react-router-dom";
 import { product_db, product_categories } from "../product-db"
 import { ProductCardLayout } from "../Components/product-card-layout"
 import { SortReducer } from "../helpers/helpers"
 
 export default function Products() {
-
+    const { filter } = useParams();
     const [state, dispatch] = useReducer(SortReducer, product_db)
     const [priceFilter, setPriceFilter] = useState(5000);
+
+    useEffect(() => {
+        console.log("--", filter)
+        if (filter !== undefined) {
+            switch (filter) {
+                case "artists":
+                    dispatch({ type: "FILTER_BY_CATEGORY", payload: "Artists' Pencils" })
+                    break;
+                case "coloured":
+                    dispatch({ type: "FILTER_BY_CATEGORY", payload: "Coloured Pencils" })
+                    break;
+            }
+        }
+    }, [])
 
     return (
         <main>

@@ -33,7 +33,7 @@ export default function Homepage() {
             <div className="grid-left">
                 <p>Check out the different types of sketching pencils</p>
                 <div className="btn-container">
-                    <button className="primary-btn">Check it out</button>
+                    <NavLink style={ActiveLinkStyle} to="/product-filter/artists"><button className="primary-btn">Check it out</button></NavLink>
                 </div>
             </div>
             <div className="grid-right">
@@ -45,7 +45,7 @@ export default function Homepage() {
             <div className="grid-left">
                 <p>Check out the collection of coloured pencils</p>
                 <div className="btn-container">
-                    <button className="primary-btn">Check it out</button>
+                    <NavLink style={ActiveLinkStyle} to="/product-filter/coloured"><button className="primary-btn">Check it out</button></NavLink>
                 </div>
             </div>
             <div className="grid-right">

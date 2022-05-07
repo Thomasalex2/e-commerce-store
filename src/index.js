@@ -24,6 +24,7 @@ ReactDOM.render(
             <Route path="/" element={<App />}>
               <Route path="homepage" element={<Homepage />} />
               <Route path="products" element={<Products />} />
+              <Route path="product-filter/:filter" element={<Products />} />
               <Route path="/products/:productName" element={<ProductDetail />} />
               <Route path="cart" element={<Cart />} />
               <Route path="wishlist" element={<Wishlist />} />
