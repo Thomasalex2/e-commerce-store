@@ -5,6 +5,7 @@
 @import "homepage.css";
 @import "product_page.css";
 @import "cart_wishlist.css";
+@import "product_detail.css";
 
 :root {
     --primary-color: rgb(14, 160, 14);
@@ -14,6 +15,7 @@
     --black-bg-color: rgb(34, 33, 33);
     --grey-bg-color: rgb(173, 44, 44);
     --lightgrey-color: lightgrey;
+    --active-link: #cbd5e1;
 }
 
 body {
@@ -27,6 +29,8 @@ img {
 }
 
 .nav-bar {
+    position: sticky;
+    top: 0px;
     color: var(--white-color)
 }
 
@@ -35,4 +39,17 @@ img {
     text-align: center;
     padding: 1rem;
     margin: 1rem;
+}
+
+.active-lnk {
+    color: red
+}
+
+.slider-container {
+    display:block;
+}
+
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
 }
