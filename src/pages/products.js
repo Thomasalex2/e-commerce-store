@@ -10,7 +10,6 @@ export default function Products() {
     const [priceFilter, setPriceFilter] = useState(5000);
 
     useEffect(() => {
-        console.log("--", filter)
         if (filter !== undefined) {
             switch (filter) {
                 case "artists":

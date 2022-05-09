@@ -3,7 +3,7 @@ import { useWishlist } from "../contexts/wishlist-context"
 import { useCart } from "../contexts/cart-context"
 
 
-export const WishlistCardLayout = ({ id, name, image, brand, description, price, rating, inStock, fastDelivery }) => {
+export const WishlistCardLayout = ({ id, name, image, brand, description, price, rating, inStock, fastDelivery }, qty) => {
     
     const { removeItemFromWishlist } = useWishlist();
     const { cart, setCart } = useCart();
@@ -31,6 +31,11 @@ export const WishlistCardLayout = ({ id, name, image, brand, description, price,
                     {inStock ? <small>✅ In Stock</small> : <small>❌ Out of Stock</small>}
                     <br />
                     {fastDelivery && <small>⚡Fast Delivery available</small>}
+                    <div className="quantity-container">
+                        <button className="secondary-btn">-</button>
+                        <input type="text" defaultValue={qty} />
+                        <button className="secondary-btn">+</button>
+                    </div>
                 </div>
                 <div className="card-clickables">
                     <div className="btn-container">

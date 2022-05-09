@@ -7,7 +7,7 @@ export default function Wishlist() {
 
     const productsInWishlist = [];
     product_db.forEach(product => {
-        if (wishlist.includes(product.name)) {
+        if (Object.keys(wishlist).includes(product.name)) {
             productsInWishlist.push(product);
         }
     });
@@ -17,7 +17,7 @@ export default function Wishlist() {
             <h4 className="heading-center">My Wishlist</h4>
             {productsInWishlist.length === 0 ? <h5 className="heading-center">No Items in your Wishlist!</h5> : null}
             <section className="products-panel">
-                {productsInWishlist.map(product => WishlistCardLayout(product))}
+                {productsInWishlist.map(product => WishlistCardLayout(product, wishlist[product.name]))}
             </section>
         </main>
     );

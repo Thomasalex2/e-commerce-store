@@ -12,13 +12,14 @@ function App() {
     useEffect(() => {
         try {
             console.log(JSON.parse("Wishlist Items: ", localStorage.getItem("wishlistItems")))
-            if (JSON.parse(localStorage.getItem("cartItems")) === null) {
+            if (JSON.parse(localStorage.getItem("wishlistItems")) === null) {
                 throw Error;
             }
             setWishlist(JSON.parse(localStorage.getItem("wishlistItems")))
         } catch (error) {
             console.log("No Wishlist Items")
-            setWishlist(() => []);
+            const newWishlist = {};
+            setWishlist(() => newWishlist);
         }
     }, []);
 
@@ -39,7 +40,6 @@ function App() {
         <div>
             <nav className="nav-bar">
                 <div className="nav-elements-left">
-                    <button className="nav-btn-style"><span className="material-icons">menu</span></button>
                     <NavLink style={ActiveLinkStyle} to="/homepage"><h4>The Pencil Store</h4></NavLink>
                 </div>
                 <div className="nav-elements-right">
