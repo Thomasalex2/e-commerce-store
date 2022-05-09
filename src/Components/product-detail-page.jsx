@@ -5,7 +5,7 @@ import { useCart } from "../contexts/cart-context"
 
 export const ProductDetail = () => {
     const { productName } = useParams();
-    const { wishlist, setWishlist } = useWishlist();
+    const { addItemToWishlist } = useWishlist();
     const { cart, setCart } = useCart();
 
     const { id, name, image, brand, description, feature_points, price, rating, inStock, fastDelivery } = product_db.filter((current) => current.name === productName)[0];
@@ -29,7 +29,7 @@ export const ProductDetail = () => {
                     {fastDelivery && <small>⚡Fast Delivery available</small>}
                     <div className="btn-container">
                         <button className="primary-btn" disabled={!inStock} onClick={() => setCart([...cart, name])}>Add to Cart</button>
-                        <button className="secondary-btn" onClick={() => setWishlist([...wishlist, name])}>Add to Wishlist</button>
+                        <button className="secondary-btn" onClick={() => addItemToWishlist(name)}>Add to Wishlist</button>
                     </div>
                 </div>
             </div>

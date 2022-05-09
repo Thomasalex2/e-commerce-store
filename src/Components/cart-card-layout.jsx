@@ -11,7 +11,9 @@ export const CartCardLayout = ({ id, name, image, brand, description, price, rat
 
     const moveToWishlist = item => {
         removeItemFromCart(item)
-        setWishlist(() => [...wishlist, item])
+        const newWishlist = { ...wishlist }
+        wishlist.hasOwnProperty(item) ? newWishlist[item]++ : newWishlist[item] = 1;
+        setWishlist(newWishlist)
     } 
 
     return (
