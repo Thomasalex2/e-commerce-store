@@ -5,12 +5,6 @@ const WishlistContext = createContext();
 const WishlistProvider = ({ children }) => {
     const [wishlist, setWishlist] = useState({});
     const [wishlistCount, setWishlistCount] = useState(0);
-    useEffect(() => updateWishlist(), [wishlist]);
-
-    const updateWishlist = () => {
-        localStorage.setItem('wishlistItems', JSON.stringify(wishlist));
-        setWishlistCount(Object.keys(wishlist).length);
-    }
 
     const addItemToWishlist = (item) => {
         const newWishlist = { ...wishlist }
@@ -18,15 +12,39 @@ const WishlistProvider = ({ children }) => {
         setWishlist(() => newWishlist)
     }
 
+    const reduceQuantityFromWishlist = (item) => {
+        const newWishlist = { ...wishlist }
+        newWishlist[item] > 1 ? newWishlist[item]-- : delete newWishlist[item];
+        setWishlist(() => newWishlist)
+    }
+
     const removeItemFromWishlist = (item) => {
         const newWishlist = { ...wishlist };
         delete newWishlist[item]
-        console.log("Check: ", newWishlist)
         setWishlist(() => newWishlist);
     }
 
+    useEffect(() => {
+        try {
+            console.log("Wishlist Items: ", JSON.parse(localStorage.getItem("wishlistItems")))
+            if (JSON.parse(localStorage.getItem("wishlistItems")) === null) {
+                throw Error;
+            }
+            setWishlist(JSON.parse(localStorage.getItem("wishlistItems")))
+        } catch (error) {
+            console.log("No Wishlist Items", error)
+            const newWishlist = {};
+            setWishlist(() => newWishlist);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('wishlistItems', JSON.stringify(wishlist));
+        setWishlistCount(Object.keys(wishlist).length);
+    }, [wishlist]);
+
     return (
-        <WishlistContext.Provider value={{ wishlist, wishlistCount, setWishlist, setWishlistCount, removeItemFromWishlist, addItemToWishlist }}>
+        <WishlistContext.Provider value={{ wishlist, wishlistCount, setWishlist, setWishlistCount, removeItemFromWishlist, addItemToWishlist, reduceQuantityFromWishlist }}>
             {children}
         </WishlistContext.Provider>
     )
