@@ -37,7 +37,7 @@ export default function Homepage() {
                 </div>
             </div>
             <div className="grid-right">
-                <img className="fill-img" src={pencil}/>
+                <img className="fill-img" src={pencil} alt="banner"/>
             </div>
         </div>
 
@@ -49,7 +49,7 @@ export default function Homepage() {
                 </div>
             </div>
             <div className="grid-right">
-                <img className="fill-img" src={pencil}/>
+                <img className="fill-img" src={pencil} alt="banner"/>
             </div>
         </div>
 

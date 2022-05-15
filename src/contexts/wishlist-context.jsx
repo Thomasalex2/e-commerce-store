@@ -28,6 +28,7 @@ const WishlistProvider = ({ children }) => {
         try {
             console.log("Wishlist Items: ", JSON.parse(localStorage.getItem("wishlistItems")))
             if (JSON.parse(localStorage.getItem("wishlistItems")) === null) {
+                console.log("No Wishlist Items")
                 throw Error;
             }
             setWishlist(JSON.parse(localStorage.getItem("wishlistItems")))
