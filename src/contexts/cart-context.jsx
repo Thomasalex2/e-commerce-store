@@ -17,7 +17,6 @@ const CartProvider = ({ children }) => {
         newCart[item] > 1 ? newCart[item]-- : delete newCart[item];
         setCart(() => newCart)
     }
-
     const removeItemFromCart = (item) => {
         const newCart = { ...cart };
         delete newCart[item];
@@ -28,6 +27,7 @@ const CartProvider = ({ children }) => {
         try {
             console.log("Cart Items: ", JSON.parse(localStorage.getItem("cartItems")))
             if (JSON.parse(localStorage.getItem("cartItems")) === null) {
+                console.log("No Cart Items")
                 throw Error;
             }
             setCart(JSON.parse(localStorage.getItem("cartItems")))
