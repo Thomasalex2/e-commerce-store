@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { ToastNotification } from "../Components/toast";
 
 const CartContext = createContext();
 
@@ -10,6 +11,7 @@ const CartProvider = ({ children }) => {
         const newCart = { ...cart }
         cart.hasOwnProperty(item) ? newCart[item]++ : newCart[item] = 1;
         setCart(() => newCart)
+        ToastNotification('success', `${item} added to cart`)
     }
 
     const reduceQuantityFromCart = (item) => {
@@ -21,6 +23,7 @@ const CartProvider = ({ children }) => {
         const newCart = { ...cart };
         delete newCart[item];
         setCart(() => newCart);
+        ToastNotification('info', `${item} removed from cart`)
     }
 
     useEffect(() => {

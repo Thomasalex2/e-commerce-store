@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { ToastNotification } from "../Components/toast";
 
 const WishlistContext = createContext();
 
@@ -10,6 +11,7 @@ const WishlistProvider = ({ children }) => {
         const newWishlist = { ...wishlist }
         wishlist.hasOwnProperty(item) ? newWishlist[item]++ : newWishlist[item] = 1;
         setWishlist(() => newWishlist)
+        ToastNotification('success', `${item} added to wishlist`)
     }
 
     const reduceQuantityFromWishlist = (item) => {
@@ -22,6 +24,7 @@ const WishlistProvider = ({ children }) => {
         const newWishlist = { ...wishlist };
         delete newWishlist[item]
         setWishlist(() => newWishlist);
+        ToastNotification('info', `${item} removed wishlist`)
     }
 
     useEffect(() => {

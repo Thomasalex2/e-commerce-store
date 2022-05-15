@@ -15,6 +15,7 @@
 .overlay-text {
     position: absolute;
     font-weight: bolder;
+    padding: 0rem 0.5rem;
     top: 40%;
     left: 10%;
     display: none;

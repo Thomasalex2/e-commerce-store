@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom"
 import { useState } from "react"
 import { useWishlist } from "../contexts/wishlist-context"
 import { useCart } from "../contexts/cart-context"
+import { ToastContainer } from 'react-toastify';
+import { ToastNotification } from "../Components/toast";
 
 
 export const WishlistCardLayout = ({ id, name, image, brand, description, price, rating, inStock, fastDelivery }, qty) => {
@@ -16,6 +18,7 @@ export const WishlistCardLayout = ({ id, name, image, brand, description, price,
         const newCart = { ...cart }
         newCart.hasOwnProperty(item) ? newCart[item] += qty : newCart[item] = qty;
         setCart(() => newCart)
+        ToastNotification("success", "Item moved to cart")
     }
 
     return (
@@ -58,6 +61,7 @@ export const WishlistCardLayout = ({ id, name, image, brand, description, price,
                     <div className="btn-container">
                         <button className="primary-btn" onClick={() => moveToCart(name)}>Move to Cart</button>
                         <button className="secondary-btn" onClick={() => removeItemFromWishlist(name)}>Remove</button>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>

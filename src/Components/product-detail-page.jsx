@@ -2,6 +2,7 @@ import { useParams, useNavigate} from "react-router-dom";
 import { product_db } from "../product-db";
 import { useWishlist } from "../contexts/wishlist-context"
 import { useCart } from "../contexts/cart-context"
+import { ToastContainer } from 'react-toastify';
 
 export const ProductDetail = () => {
     const { productName } = useParams();
@@ -9,7 +10,7 @@ export const ProductDetail = () => {
     const { addItemToCart } = useCart();
     const navigate = useNavigate();
 
-    const { id, name, image, brand, description, feature_points, price, rating, inStock, fastDelivery } = product_db.filter((current) => current.name === productName)[0];
+    const { name, image, brand, description, feature_points, price, rating, inStock, fastDelivery } = product_db.filter((current) => current.name === productName)[0];
 
     return (
         <>
@@ -32,6 +33,7 @@ export const ProductDetail = () => {
                     <div className="btn-container">
                         <button className="primary-btn" disabled={!inStock} onClick={() => addItemToCart(name)}>Add to Cart</button>
                         <button className="secondary-btn" onClick={() => addItemToWishlist(name)}>Add to Wishlist</button>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>
