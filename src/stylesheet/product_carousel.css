@@ -1,0 +1,35 @@
+.banner-images {
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 10rem;
+    gap: 1rem;
+    overflow: auto;
+}
+
+.overlay-container {
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    font-weight: bolder;
+    top: 40%;
+    left: 10%;
+    display: none;
+}
+
+.overlay-container:hover .carousel-img {
+    opacity: 45%;
+    transition: .25s ease;
+}
+
+.overlay-container:hover .overlay-text {
+    display: block;
+}
+
+.carousel-img {
+    max-height: 9.25rem;
+    border-radius: 1rem;
+}

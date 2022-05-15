@@ -6,6 +6,7 @@
 @import "product_page.css";
 @import "cart_wishlist.css";
 @import "product_detail.css";
+@import "product_carousel.css";
 
 :root {
     --primary-color: rgb(14, 160, 14);

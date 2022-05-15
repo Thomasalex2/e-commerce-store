@@ -1,17 +1,14 @@
 import { NavLink } from "react-router-dom"
 import pencil from ".//../graphics/pencils.jpg"
 import { ActiveLinkStyle } from ".//../helpers/helpers"
+import { ProductCarousel } from "../Components/product-carousel-component";
+import { product_db } from "../product-db";
 
 export default function Homepage() {
   return (
       <main>
     <div className="banner-images">
-        <img src={pencil} alt="pencils"/>
-        <img src={pencil} alt="pencils"/>
-        <img src={pencil} alt="pencils"/>
-        <img src={pencil} alt="pencils"/>
-        <img src={pencil} alt="pencils"/>
-        <img src={pencil} alt="pencils"/>
+        {product_db.map(product => product.inStock && ProductCarousel(product))}
     </div>
 
     <section className="cover-image">
