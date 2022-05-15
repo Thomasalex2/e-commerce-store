@@ -18,9 +18,11 @@ export default function Products() {
                 case "coloured":
                     dispatch({ type: "FILTER_BY_CATEGORY", payload: "Coloured Pencils" })
                     break;
+                default:
+                    dispatch({ type: "FILTER_BY_CATEGORY", payload: "Show All" })
             }
         }
-    }, [])
+    }, [filter])
 
     return (
         <main>

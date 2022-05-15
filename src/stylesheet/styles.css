@@ -53,3 +53,15 @@ a, a:visited, a:hover, a:active {
     text-decoration: none;
     color: inherit;
 }
+
+.round-btn {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    margin: 0.25rem 0.5rem;
+}

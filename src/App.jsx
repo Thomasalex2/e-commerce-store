@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { Outlet, NavLink } from "react-router-dom";
 import { ActiveLinkStyle } from "./helpers/helpers"
 import { useWishlist } from "./contexts/wishlist-context";
@@ -6,35 +5,8 @@ import { useCart } from "./contexts/cart-context";
 
 function App() {
 
-    const { wishlistCount, setWishlist } = useWishlist();
-    const { cartCount, setCart } = useCart();
-
-    useEffect(() => {
-        try {
-            console.log(JSON.parse("Wishlist Items: ", localStorage.getItem("wishlistItems")))
-            if (JSON.parse(localStorage.getItem("wishlistItems")) === null) {
-                throw Error;
-            }
-            setWishlist(JSON.parse(localStorage.getItem("wishlistItems")))
-        } catch (error) {
-            console.log("No Wishlist Items")
-            const newWishlist = {};
-            setWishlist(() => newWishlist);
-        }
-    }, []);
-
-    useEffect(() => {
-        try {
-            console.log("Cart Items: ", JSON.parse(localStorage.getItem("cartItems")))
-            if (JSON.parse(localStorage.getItem("cartItems")) === null) {
-                throw Error;
-            }
-            setCart(JSON.parse(localStorage.getItem("cartItems")))
-        } catch (error) {
-            console.log("No Cart Items")
-            setCart(() => []);
-        }
-    }, []);
+    const { wishlistCount } = useWishlist();
+    const { cartCount } = useCart();
 
     return (
         <div>
