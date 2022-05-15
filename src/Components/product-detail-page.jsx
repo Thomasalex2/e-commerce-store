@@ -1,4 +1,4 @@
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import { product_db } from "../product-db";
 import { useWishlist } from "../contexts/wishlist-context"
 import { useCart } from "../contexts/cart-context"
@@ -7,12 +7,13 @@ export const ProductDetail = () => {
     const { productName } = useParams();
     const { addItemToWishlist } = useWishlist();
     const { addItemToCart } = useCart();
+    const navigate = useNavigate();
 
     const { id, name, image, brand, description, feature_points, price, rating, inStock, fastDelivery } = product_db.filter((current) => current.name === productName)[0];
 
     return (
         <>
-            <NavLink to="/products"><button class="round-btn"><span className="material-icons">arrow_back</span><p>All Products</p></button></NavLink>
+            <button onClick={() => navigate(-1)} class="round-btn"><span className="material-icons">arrow_back</span><p>Back</p></button>
             <div className="product-detail-page">
                 <img className="product-page-img" src={image} alt="product" />
                 <div className="product-details">
