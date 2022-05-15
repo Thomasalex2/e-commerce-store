@@ -5,9 +5,10 @@ import { product_db } from "../product-db";
 export default function Cart() {
     
     const { cart } = useCart();
+
     const productsInCart = [];
     product_db.forEach(product => {
-        if (cart.includes(product.name)) {
+        if (Object.keys(cart).includes(product.name)) {
             productsInCart.push(product);
         }
     });
@@ -21,20 +22,12 @@ export default function Cart() {
         )
     }
 
-    const getTotalItemPrice = () => {
-        let totalItemPrice = 0;
-        productsInCart.forEach(product => {
-            totalItemPrice += parseInt(product.price);
-        });
-        return totalItemPrice;
-    }
-
     const showCartDetails = () => {
 
         const totalItemPrice = () => {
             let totalItemPrice = 0;
             productsInCart.forEach(product => {
-                totalItemPrice += parseInt(product.price);
+                totalItemPrice += parseInt(product.price) * cart[product.name];
             });
             return totalItemPrice;
         }
@@ -49,11 +42,11 @@ export default function Cart() {
                 <article className="cart-page">
                     <h4 className="page-title">Items inside your Cart ({productsInCart.length})</h4>
                     <section className="checkout-panel">
-                        <h4 className="checkout-title">Final Price Details</h4>
+                        <h4 className="checkout-title">Summary</h4>
                         <p className="checkout-labels">Price: </p>
                         <p className="checkout-values">₹{totalItemPrice()}</p>
                         <p className="checkout-labels">Shipping:</p>
-                        <p className="checkout-values">₹{shippingRate()}</p>
+                        <p className="checkout-values">{shippingRate() === 0 ? <>Free Delivery</> : <>₹{shippingRate()}</>}</p>
                         <p className="checkout-labels">Taxes:</p>
                         <p className="checkout-values">₹{getTaxes()}</p>
                         <p className="checkout-labels">Discounts:</p>
@@ -62,9 +55,15 @@ export default function Cart() {
                         <p className="checkout-values">₹{getTotalPrice()}</p>
                         <p className="checkout-note">You will save ₹{getDiscounts()} for this order!</p>
                         <button className="primary-btn">Checkout and place order</button>
+                        <br/>
+                        <p className="checkout-labels">Discount Code</p>
+                        <div className="discount-box-container">
+                            <input className="small-input-field" type="text" placeholder="Enter your code here" />
+                            <button className="primary-btn">Apply</button>
+                        </div>
                     </section>
                     <section className="products-panel">
-                        {productsInCart.map(product => CartCardLayout(product))}
+                        {productsInCart.map(product => CartCardLayout(product, cart[product.name]))}
                     </section>
                 </article>
             </>
