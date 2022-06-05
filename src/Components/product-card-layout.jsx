@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import { useWishlist } from "../contexts/wishlist-context"
 import { useCart } from "../contexts/cart-context"
-import { ToastNotification } from "../Components/toast";
+import { ToastContainer } from 'react-toastify';
 
 export const ProductCardLayout = ({ id, name, subheading, image, brand, description, price, rating, inStock, fastDelivery, isFeatured }) => {
     const { addItemToWishlist } = useWishlist();
@@ -35,6 +35,7 @@ export const ProductCardLayout = ({ id, name, subheading, image, brand, descript
                         <div className="btn-container">
                             <button className="primary-btn" disabled={!inStock} onClick={() => addItemToCart(name)}>Add to Cart</button>
                             <button className="secondary-btn" onClick={() => addItemToWishlist(name)}>Add to Wishlist</button>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>
