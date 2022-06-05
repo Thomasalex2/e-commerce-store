@@ -1,4 +1,4 @@
-@import url("https://fervent-ui.netlify.app/resources/fervent-ui/fervent-ui.css");
+@import "fervent-ui/fervent-ui.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Ubuntu:wght@300&display=swap');
 
 @import "login.css";

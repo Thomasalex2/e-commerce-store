@@ -7,6 +7,7 @@ export const product_db = [
     {
         id: uuid(),
         name: "Everyday Pencils",
+        subheading: "",
         image: pencil,
         price: "299",
         brand: "Faber-Castell",
@@ -20,7 +21,8 @@ export const product_db = [
     },
     {
         id: uuid(),
-        name: "Coloured Pencils - set of 16",
+        name: "Coloured Pencils",
+        subheading: "set of 16",
         image: pencil,
         price: "499",
         brand: "Faber-Castell",
@@ -34,7 +36,8 @@ export const product_db = [
     },
     {
         id: uuid(),
-        name: "Coloured Pencils - set of 24",
+        name: "Coloured Pencils",
+        subheading: "Set of 24",
         image: pencil,
         price: "549",
         brand: "Faber-Castell",
@@ -48,7 +51,8 @@ export const product_db = [
     },
     {
         id: uuid(),
-        name: "Coloured Pencils - set of 30",
+        name: "Coloured Pencils",
+        subheading: "Set of 30",
         image: pencil,
         price: "599",
         brand: "Faber-Castell",
@@ -63,6 +67,7 @@ export const product_db = [
     {
         id: uuid(),
         name: "Drawing Pencils",
+        subheading: "",
         image: pencil,
         price: "699",
         brand: "Faber-Castell",
@@ -77,6 +82,7 @@ export const product_db = [
     {
         id: uuid(),
         name: "Shading Pencils",
+        subheading: "",
         image: pencil,
         price: "599",
         brand: "Faber-Castell",
@@ -91,6 +97,7 @@ export const product_db = [
     {
         id: uuid(),
         name: "Sketch Pencils",
+        subheading: "",
         image: pencil,
         price: "649",
         brand: "Faber-Castell",
@@ -105,6 +112,7 @@ export const product_db = [
     {
         id: uuid(),
         name: "Creators' Set",
+        subheading: "",
         image: pencil,
         price: "1099",
         brand: "Faber-Castell",
@@ -118,7 +126,8 @@ export const product_db = [
     },
     {
         id: uuid(),
-        name: "Pencil - set of 4",
+        name: "Pencils",
+        subheading: "Set of 4",
         image: pencil,
         price: "99",
         brand: "Faber-Castell",

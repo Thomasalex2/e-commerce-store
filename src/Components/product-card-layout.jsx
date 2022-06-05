@@ -3,7 +3,7 @@ import { useWishlist } from "../contexts/wishlist-context"
 import { useCart } from "../contexts/cart-context"
 import { ToastNotification } from "../Components/toast";
 
-export const ProductCardLayout = ({ id, name, image, brand, description, price, rating, inStock, fastDelivery, isFeatured }) => {
+export const ProductCardLayout = ({ id, name, subheading, image, brand, description, price, rating, inStock, fastDelivery, isFeatured }) => {
     const { addItemToWishlist } = useWishlist();
     const { addItemToCart } = useCart();
 
@@ -17,8 +17,9 @@ export const ProductCardLayout = ({ id, name, image, brand, description, price, 
                                 <img src={image} alt="product" />
                                 <div>
                                     {isFeatured && <span className="badge bdg-med bdg-orange">FEATURED</span>}
+                                    <small>{brand}</small>
                                     <h4>{name}</h4>
-                                    <small>by {brand}</small>
+                                    {subheading !== "" && <small>{subheading}</small>}
                                 </div>
                             </div>
                             <p>{description}</p>

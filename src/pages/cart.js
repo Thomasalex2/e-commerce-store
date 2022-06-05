@@ -1,10 +1,13 @@
 import { useCart } from "../contexts/cart-context";
 import { CartCardLayout } from "../Components/cart-card-layout";
 import { product_db } from "../product-db";
+import { useEffect } from "react";
 
 export default function Cart() {
     
     const { cart } = useCart();
+
+    // useEffect(() => console.log("Refreshed"), [cart]);
 
     const productsInCart = [];
     product_db.forEach(product => {
