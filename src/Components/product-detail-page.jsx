@@ -13,7 +13,7 @@ export const ProductDetail = () => {
 
     return (
         <>
-            <button onClick={() => navigate(-1)} class="round-btn"><span className="material-icons">arrow_back</span><p>Back</p></button>
+            <button onClick={() => navigate(-1)} className="back-btn"><span className="material-icons">arrow_back</span><p>Back</p></button>
             <div className="product-detail-page">
                 <img className="product-page-img" src={image} alt="product" />
                 <div className="product-details">

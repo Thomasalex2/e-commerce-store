@@ -21,7 +21,7 @@ export const product_db = [
     },
     {
         id: uuid(),
-        name: "Coloured Pencils",
+        name: "Coloured Pencils - set of 16",
         subheading: "set of 16",
         image: pencil,
         price: "499",
@@ -36,7 +36,7 @@ export const product_db = [
     },
     {
         id: uuid(),
-        name: "Coloured Pencils",
+        name: "Coloured Pencils - set of 24",
         subheading: "Set of 24",
         image: pencil,
         price: "549",
@@ -51,7 +51,7 @@ export const product_db = [
     },
     {
         id: uuid(),
-        name: "Coloured Pencils",
+        name: "Coloured Pencils - set of 30",
         subheading: "Set of 30",
         image: pencil,
         price: "599",
@@ -126,7 +126,7 @@ export const product_db = [
     },
     {
         id: uuid(),
-        name: "Pencils",
+        name: "Pencils - set of 4",
         subheading: "Set of 4",
         image: pencil,
         price: "99",

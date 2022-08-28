@@ -1,0 +1,37 @@
+
+.tab-bar {
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.tab-btn-style {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    flex-grow: 1;
+    background: var(--secondary-color);
+    border-bottom:3px solid var(--primary-color);
+}
+
+.tab-btn-style:focus {
+    background: white;
+    border-bottom:3px solid var(--text-color);
+}
+
+
+.tab-btn-style:hover {
+    background-color: var(--secondary-color);
+    background: white;
+}
+
+.tab-btn-style:active {
+    /* background-color: var(--primary-color); */
+    /* filter: opacity(0.25); */
+    /* color: var(--text-color); */
+    border-bottom: 3px solid var(--primary-color);
+}

@@ -1,11 +1,16 @@
 
 import { NavLink } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useWishlist } from "../contexts/wishlist-context"
 import { useCart } from "../contexts/cart-context"
+import { ToastContainer } from 'react-toastify';
 
 
-export const CartCardLayout = ({ id, name, image, brand, description, price, rating, inStock, fastDelivery }, qty) => {
+export const CartCardLayout = (props) => {
+
+    console.log(props)
+    const { id, name, image, brand, description, price, rating, inStock, fastDelivery } = props.value.product;
+    const qty = props.value.qty
 
     const { addItemToCart, removeItemFromCart, reduceQuantityFromCart } = useCart();
     const { wishlist, setWishlist } = useWishlist();
@@ -55,6 +60,7 @@ export const CartCardLayout = ({ id, name, image, brand, description, price, rat
                     <div className="btn-container">
                         <button className="primary-btn" onClick={() => removeItemFromCart(name)}>Remove from Cart</button>
                         <button className="secondary-btn" onClick={() => moveToWishlist(name)}>Move to Wishlist</button>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>

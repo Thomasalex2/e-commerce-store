@@ -17,9 +17,8 @@ export const ProductCardLayout = ({ id, name, subheading, image, brand, descript
                                 <img src={image} alt="product" />
                                 <div>
                                     {isFeatured && <span className="badge bdg-med bdg-orange">FEATURED</span>}
-                                    <small>{brand}</small>
                                     <h4>{name}</h4>
-                                    {subheading !== "" && <small>{subheading}</small>}
+                                    <small>{brand}</small>
                                 </div>
                             </div>
                             <p>{description}</p>

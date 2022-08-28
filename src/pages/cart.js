@@ -66,7 +66,7 @@ export default function Cart() {
                         </div>
                     </section>
                     <section className="products-panel">
-                        {productsInCart.map(product => CartCardLayout(product, cart[product.name]))}
+                        {productsInCart.map(product => <CartCardLayout value={{ product:product, qty:cart[product.name] }} />)}
                     </section>
                 </article>
             </>

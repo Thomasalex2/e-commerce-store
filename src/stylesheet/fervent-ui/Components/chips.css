@@ -1,0 +1,26 @@
+.chips-container {
+    background-color: var(--secondary-color);
+    min-height: 3rem;
+    max-width: 40rem;
+    display:flex;
+    flex-flow: row wrap;
+    border-bottom: 2px solid black;
+}
+
+.chips {
+    background-color: lightgray;
+    margin: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
+    display:flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.chips:hover {
+    background-color: rgb(194, 194, 194);
+}
+
+.chips span {
+    opacity: 0.5;
+}
