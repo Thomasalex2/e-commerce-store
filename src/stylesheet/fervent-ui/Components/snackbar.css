@@ -1,0 +1,75 @@
+.snackbar {
+    position: fixed;
+    display: flex;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    gap: 10px;
+    align-items: center;
+    z-index: 9999;
+    bottom: 20px;
+    left: 20px;
+    padding: 0.1rem 0.5em;
+}
+
+.snackbar-msg {
+    color: var(--white-color);
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 0.9rem;
+}
+
+.snackbar-btn-container {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: auto;
+    display:flex;
+}
+
+.snackbar-btn-container button {
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+}
+
+.snackbar-primary-btn {
+    color: gold;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.snackbar-primary-btn:hover {
+    color: rgb(179, 152, 2)
+}
+
+.snackbar-primary-btn:active {
+    color: rgb(226, 193, 4);
+}
+
+.snackbar-close-btn {
+    font-size: 0.5rem;
+    color: var(--white-color);
+}
+
+.snackbar-close-btn:hover {
+    color: rgba(245, 244, 239, 0.712);
+    /* border-radius: 3rem; */
+}
+
+.snackbar-close-btn:active {
+    color: rgb(187, 187, 184);
+}
+
+.success-toast {
+    border-bottom: 5px solid green;
+}
+
+.failed-toast {
+    border-bottom: 5px solid red
+}
+
+.processing-toast {
+    border-bottom: 5px solid orange
+}
+
+.info-toast {
+    border-bottom: 5px solid skyblue
+}

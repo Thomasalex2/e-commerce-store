@@ -1,0 +1,63 @@
+.list-style-circle {
+    list-style-type: circle;
+}
+
+.list-style-disc {
+    list-style-type: disc;
+}
+
+.list-style-square {
+    list-style-type: square;
+}
+
+.list-style-lower-alpha {
+    list-style-type: lower-alpha;
+}
+
+.list-style-upper-alpha {
+    list-style-type: upper-alpha;
+}
+
+.list-style-lower-roman {
+    list-style-type: lower-roman;
+}
+
+.list-style-upper-roman {
+    list-style-type: upper-roman;
+}
+
+.list-style-no-bullets {
+    list-style-type: none;
+}
+
+.list-style-inline li {
+    display:inline;
+}
+
+.stacked-notif-container {
+    padding: 0rem;
+    position: fixed;
+    left:3px;
+    bottom:0px;
+}
+
+.stacked-notif-layout {
+    margin: 0.5rem;
+    list-style-type: none;
+    width: 18rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 1rem;
+}
+
+.stacked-notif-heading {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.stacked-notif-layout .btn-container {
+    justify-content: flex-start;
+    margin: 0.5rem 0.25rem;
+}

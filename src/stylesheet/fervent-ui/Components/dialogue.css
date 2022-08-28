@@ -1,0 +1,74 @@
+.dialogue-container {
+    display:flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    margin: 3rem;
+    align-items: center;
+}
+
+.dlg-box {
+    width: 15rem;
+    max-width: 20rem;
+    max-height: 15rem;
+    padding:1.25rem;
+    border-radius:0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.dlg-header {
+    margin:0rem;
+    padding:0.5rem;
+    color: var(--primary-color)
+}
+
+.dlg-btns-container {
+    margin-left:auto;
+}
+
+.dlg-message {
+    font-size: 0.9rem;
+}
+
+.dlg-btns {
+    padding:0.5rem 1rem;
+    border-radius:5px;
+}
+
+.dlg-btns:hover {
+    background: var(--secondary-color);
+    outline: none;
+    border: none;
+}
+
+.dlg-btns:active {
+    background: var(--primary-color);
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.dlg-btn-side button {
+    display:inline;
+}
+
+.dlg-btn-top button {
+    display: block;
+}
+
+.dlg-opt-container {
+    display: flex;
+    flex-flow: column;
+    overflow:auto;
+    margin-bottom:0.5rem;
+}
+
+.radio-btn-option {
+    padding: 0.25rem;
+}

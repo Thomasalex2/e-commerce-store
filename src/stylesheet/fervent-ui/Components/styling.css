@@ -1,0 +1,38 @@
+.border-light {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.border-medium {
+    border: 3px solid var(--border-color);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.border-thick {
+    border: 5px solid var(--border-color);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+.border-rad-S {
+    border-radius: 5px;
+}
+
+.border-rad-M {
+    border-radius: 10px;
+}
+
+.border-rad-L {
+    border-radius: 15px;
+}
+
+.border-rad-XL {
+    border-radius: 20px;
+}
+
+.border-rad-full {
+    border-radius: 100%;
+}

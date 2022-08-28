@@ -1,0 +1,16 @@
+.product-detail-page {
+    padding: 3rem 1rem;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.product-page-img {
+    padding: 1rem 5rem;
+    max-width:40rem;
+    flex-grow:1
+}
+
+.product-details {
+    padding: 1rem 5rem;
+    flex-grow:1
+}

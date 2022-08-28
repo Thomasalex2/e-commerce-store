@@ -1,0 +1,47 @@
+.grid-simplified {
+    display:grid;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.grid-simplified > * {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.grid-50-50 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-70-30 {
+    grid-template-columns: 7fr 3fr;
+}
+
+.grid-33-33-33 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-50-50 > .grid-left,
+.grid-70-30 > .grid-left {
+    grid-column: 1/2;
+}
+
+.grid-50-50 > .grid-right,
+.grid-70-30 > .grid-right {
+    grid-column: 2/3;
+}
+
+.grid-33-33-33 > .grid-left {
+    grid-column: 1/2;
+}
+
+.grid-33-33-33 > .grid-mid {
+    grid-column: 2/3;
+}
+
+.grid-33-33-33 > .grid-right {
+    grid-column: 3/4;
+}
